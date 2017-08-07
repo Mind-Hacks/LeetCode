@@ -1,4 +1,4 @@
-package main.java.com.mindhacks.Second.MaximumDepthofBinaryTree;
+package com.mindhacks.Second.MaximumDepthofBinaryTree;
 
 //二叉树的叶子节点
 public class TreeNode {

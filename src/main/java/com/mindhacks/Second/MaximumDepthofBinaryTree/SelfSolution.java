@@ -1,4 +1,4 @@
-package main.java.com.mindhacks.Second.MaximumDepthofBinaryTree;
+package com.mindhacks.Second.MaximumDepthofBinaryTree;
 
 public class SelfSolution {
     public int maxDepth(TreeNode root) {
