@@ -1,4 +1,4 @@
-package main.java.com.mindhacks.First.SingleNumber;
+package com.mindhacks.First.SingleNumber;
 
 public class SelfSolution {
     public int singleNumber(int[] nums) {

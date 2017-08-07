@@ -1,7 +1,6 @@
-package main.java.com.mindhacks.First.SingleNumber;
+package com.mindhacks.First.SingleNumber;
 
 /**
- * @Description TODO
  * @User MindHacks
  * @Date 2017/8/6 15:57
  * @Version 1.0.0
