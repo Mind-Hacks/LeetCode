@@ -6,9 +6,6 @@ public class Solution {
         if (x == 0) {
             return 0;
         }
-        if (x >= Integer.MAX_VALUE) {
-            return -1;
-        }
         if (x > 0) {
             char[] inputArray = String.valueOf(x).toCharArray();
             char[] outArray = new char[inputArray.length];
@@ -20,7 +17,11 @@ public class Solution {
                 outArray[n] = stack.pop();
             }
             String strValue = String.valueOf(outArray);
-            return Integer.parseInt(strValue);
+            Long y=Long.parseLong(strValue);
+            if (y >= Integer.MAX_VALUE) {
+                return 0;
+            }
+              return Integer.parseInt(strValue);
         }
         if (x < 0) {
             char[] inputArray = String.valueOf(x).toCharArray();
@@ -34,9 +35,13 @@ public class Solution {
                 outArray[n] = stack.pop();
             }
             String strValue = String.valueOf(outArray);
+            Long y=Long.parseLong(strValue);
+            if (y <= Integer.MIN_VALUE) {
+                return 0;
+            }
             return Integer.parseInt(strValue);
         }
-        return -1;
+        return 0;
     }
 
 

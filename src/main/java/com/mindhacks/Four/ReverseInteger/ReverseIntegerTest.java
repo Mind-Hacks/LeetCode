@@ -14,9 +14,12 @@ public class ReverseIntegerTest {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        logger.info("将整数反转的结果{}", solution.reverse(123));
+        //logger.info("将整数反转的结果{}", solution.reverse(111111111));
+        logger.info("将整数反转的结果{}", solution.reverse(123321321));
 
-        Solution solution1 = new Solution();
-        logger.info("将整数反转的结果{}", solution1.reverse(-123));
+       /* Solution solution1 = new Solution();
+        logger.info("将整数反转的结果{}", solution1.reverse(-123));*/
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
     }
 }
