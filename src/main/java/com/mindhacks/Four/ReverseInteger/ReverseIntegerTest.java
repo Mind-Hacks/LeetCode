@@ -13,13 +13,12 @@ public class ReverseIntegerTest {
     private static Logger logger = LoggerFactory.getLogger(ReverseIntegerTest.class);
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        //logger.info("将整数反转的结果{}", solution.reverse(111111111));
-        logger.info("将整数反转的结果{}", solution.reverse(123321321));
+        SelfSolution selfSolution = new SelfSolution();
+        logger.info("将整数反转的结果{}", selfSolution.reverse(123321321));
 
-       /* Solution solution1 = new Solution();
-        logger.info("将整数反转的结果{}", solution1.reverse(-123));*/
         System.out.println(Integer.MAX_VALUE);
         System.out.println(Integer.MIN_VALUE);
+
+        logger.info("优化反正整数方法:{}",new SelfSolution().reverse(-12334));
     }
 }

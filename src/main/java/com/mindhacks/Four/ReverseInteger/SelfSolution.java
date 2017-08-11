@@ -1,6 +1,6 @@
 package com.mindhacks.Four.ReverseInteger;
 
-public class Solution {
+public class SelfSolution {
 
     public int reverse(int x) {
         if (x == 0) {
