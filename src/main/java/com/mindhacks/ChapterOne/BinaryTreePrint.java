@@ -1,24 +1,57 @@
 package com.mindhacks.ChapterOne;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 /**
  * Created by MindHacks on 2017/8/21.
- * <p>
  * 二叉树打印
  */
 public class BinaryTreePrint {
+
     public int[][] printTree(TreeNode root) {
-        if (root==null){
-            return  null;
-        }
-        Queue queue=new LinkedList();
+        ArrayList<ArrayList<TreeNode>> result = new ArrayList<ArrayList<TreeNode>>();
+        ArrayList<TreeNode> level = new ArrayList<TreeNode>();      //遍历当前层
+        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+
+        TreeNode last = root;
+        TreeNode temp = root;
+        TreeNode nlast = null;      //下一行的最后一个
+
         queue.add(root);
-        if (!queue.isEmpty()){
-            int size=queue.size();
+
+        while (queue.size() != 0) {
+
+            temp = queue.poll();
+            level.add(temp);
+
+            if (temp.left != null) {
+                queue.add(temp.left);
+                nlast = temp.left;
+            }
+            if (temp.right != null) {
+                queue.add(temp.right);
+                nlast = temp.right;
+            }
+
+            if (temp == last) {
+                last = nlast;
+                result.add(level);
+                level = new ArrayList<TreeNode>();
+            }
+
         }
-        return  null;
+
+        int[][] results2 = new int[result.size()][];
+        for (int i = 0; i < result.size(); i++) {
+            results2[i] = new int[result.get(i).size()];
+            for (int j = 0; j < results2[i].length; j++) {
+                results2[i][j] = result.get(i).get(j).val;
+            }
+        }
+
+        return results2;
     }
 }
 
@@ -31,3 +64,4 @@ class TreeNode {
         this.val = val;
     }
 }
+
