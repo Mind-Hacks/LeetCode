@@ -7,6 +7,12 @@ import java.util.Queue;
 /**
  * Created by MindHacks on 2017/8/21.
  * 二叉树打印
+ *         1
+ *     /    \
+ *    2     3
+ *   /\    / \
+ *  4  5  6   7
+ *
  */
 public class BinaryTreePrint {
 
