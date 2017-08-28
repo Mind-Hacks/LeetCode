@@ -3,7 +3,7 @@ package com.mindhacks.ChapterTwo;
 import java.util.*;
 
 /**
- * 选择排序
+ * 选择排序：每次选择一个最小的数据
  */
 public class SelectionSort {
     public int[] selectionSort(int[] A, int n) {

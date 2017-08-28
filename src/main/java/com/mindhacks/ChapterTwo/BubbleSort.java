@@ -3,7 +3,7 @@ package com.mindhacks.ChapterTwo;
 import java.util.*;
 
 /**
- * 冒泡排序
+ * 冒泡排序：每次选择一个最大的数据
  */
 public class BubbleSort {
     public int[] bubbleSort(int[] A, int n) {
