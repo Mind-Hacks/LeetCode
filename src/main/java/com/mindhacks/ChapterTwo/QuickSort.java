@@ -24,7 +24,7 @@ public class QuickSort {
         int breakPoint = left - 1;
         int index = left;
         while (index <= right) {
-            if (A[index] <=A[right]) {      //TODO  这一块为什么是<=
+            if (A[index] <= A[right]) {      // 这一块为什么是<=，通过Debug得知，有了=号，才可以讲middl放入中间，并且使程序没有死循环
                 ArrayUtil.changeValue(A, ++breakPoint, index);
             }
             index++;
