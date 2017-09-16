@@ -39,7 +39,7 @@ public class HeapSort {
 
 
     public static void main(String[] args) {
-        int a[] = {3, 5, 7, 8, 8, 8, 10, 4454, 678, 10};
+        int a[] = {3, 10, 15, 20, 11, 7, 5};
         int b[] = new HeapSort().heapSort(a, a.length);
         for (int n = 0; n < b.length; n++) {
             System.out.print(b[n] + ",");
