@@ -1,5 +1,5 @@
 package com.mindhacks.ChapterTwo;
-
+//TODO 堆排序并不是很懂
 public class HeapSort {
     public int[] heapSort(int[] A, int n) {
         buildHeap(A, n);
