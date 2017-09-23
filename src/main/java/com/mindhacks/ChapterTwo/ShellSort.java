@@ -51,43 +51,5 @@ public class ShellSort {
 		System.out.println();
 	}
 
-	public static boolean isSorted(int[] arr) {
-		if (arr == null || arr.length < 2) {
-			return true;
-		}
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i - 1] > arr[i]) {
-				return false;
-			}
-		}
-		return true;
-	}
 
-	public static void main(String[] args) {
-		int len = 10;
-		int range = 10;
-		int testTimes = 50000;
-		for (int i = 0; i < testTimes; i++) {
-			int[] arr = generateArray(len, range);
-			shellSort(arr);
-			if (!isSorted(arr)) {
-				System.out.println("Wrong Case:");
-				printArray(arr);
-				break;
-			}
-		}
-
-		int len2 = 13;
-		int range2 = 10;
-		int testTimes2 = 50000;
-		for (int i = 0; i < testTimes2; i++) {
-			int[] arr = generateArray(len2, range2);
-			shellSort(arr);
-			if (!isSorted(arr)) {
-				System.out.println("Wrong Case:");
-				printArray(arr);
-				break;
-			}
-		}
-	}
 }
