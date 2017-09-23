@@ -2,54 +2,43 @@ package com.mindhacks.ChapterTwo;
 
 public class ShellSort {
 
-	public static void shellSort(int[] arr) {
-        if (arr == null || arr.length < 2) {
-			return;
-		}
-		int feet = arr.length / 2;
-		int index = 0;
-		while (feet > 0) {
-			for (int i = feet; i < arr.length; i++) {
-				index = i;
-				while (index >= feet) {
-					if (arr[index - feet] > arr[index]) {
-						swap(arr, index - feet, index);
-						index -= feet;
-					} else {
-						break;
-					}
-				}
-			}
-			feet /= 2;
-		}
-	}
+    public int[] shellSort(int[] A, int n) {
+        // write code here
 
-	public static void swap(int[] arr, int index1, int index2) {
-		int tmp = arr[index1];
-		arr[index1] = arr[index2];
-		arr[index2] = tmp;
-	}
+        if (A == null || n < 2)
+            return A;
 
-	public static int[] generateArray(int len, int range) {
-		if (len < 1) {
-			return null;
-		}
-		int[] arr = new int[len];
-		for (int i = 0; i < len; i++) {
-			arr[i] = (int) (Math.random() * range);
-		}
-		return arr;
-	}
+        int feet = n / 2;
+        int index = 0;
+        while (feet > 0) {
+            for (int i = feet; i < n; i++) {        //步长是最小的循环单位，所以是从步长开始
+                index = i;
+                while (index >= feet) {
+                    if (A[index - feet] > A[index]) {
+                        swap(A, index - feet, index);
+                        index -= feet;
+                    } else {
+                        break;
+                    }
+                }
+            }
+            feet = feet / 2;
+        }
+        return A;
+    }
 
-	public static void printArray(int[] arr) {
-		if (arr == null || arr.length == 0) {
-			return;
-		}
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
-		System.out.println();
-	}
+    void swap(int[] A, int m, int n) {
+        int temp = A[m];
+        A[m] = A[n];
+        A[n] = temp;
+    }
 
 
+    public static void main(String[] args) {
+        int[] A = new int[]{7, 4, 10, 11, 111, 222, 45, 66, 27};
+        int[] B = new ShellSort().shellSort(A, A.length);
+        for (int n = 0; n < B.length; n++) {
+            System.out.print(B[n] + " ");
+        }
+    }
 }
