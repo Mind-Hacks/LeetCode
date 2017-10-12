@@ -1,5 +1,7 @@
 package com.mindhacks.ChapterTwo;
 
+import com.mindhacks.ArrayUtil;
+
 import java.util.*;
 
 /**
@@ -8,16 +10,12 @@ import java.util.*;
 public class SelectionSort {
     public int[] selectionSort(int[] A, int n) {
         // write code here
-        for (int m = 0; m < n - 1; m++) {
-            int min = A[m];
-            for (int k = m + 1; k < n; k++) {
-                if (min > A[k]) {
-                    int temp = A[k];
-                    A[k] = min;
-                    min = temp;
+        for (int m = 0; m < n; m++) {
+            for (int point = m; point < n; point++) {
+                if (A[m] > A[point]) {
+                    ArrayUtil.changeValue(A, m, point);
                 }
             }
-            A[m] = min;
         }
         return A;
     }
