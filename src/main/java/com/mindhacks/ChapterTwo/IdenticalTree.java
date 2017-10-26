@@ -6,10 +6,12 @@ class TreeNode {
     int val = 0;
     TreeNode left = null;
     TreeNode right = null;
+
     public TreeNode(int val) {
         this.val = val;
     }
 }
+
 public class IdenticalTree {
     public boolean chkIdentical(TreeNode t1, TreeNode t2) {
         String t1Str = serialByPre(t1);
@@ -51,24 +53,37 @@ public class IdenticalTree {
     }
 
 
-    public int[] getNextArray(char[] ms) {
-        if (ms.length == 1) {
-            return new int[] { -1 };
-        }
-        int[] nextArr = new int[ms.length];
-        nextArr[0] = -1;
-        nextArr[1] = 0;
-        int pos = 2;
-        int cn = 0;
-        while (pos < nextArr.length) {
-            if (ms[pos - 1] == ms[cn]) {
-                nextArr[pos++] = ++cn;
-            } else if (cn > 0) {
-                cn = nextArr[cn];
+    public static int[] getNextArray(char[] p) {
+        int[] next = new int[p.length];
+
+        next[0] = -1;
+
+        int j = 0;
+
+        int k = -1;
+
+        while (j < p.length - 1) {
+
+            if (k == -1 || p[j] == p[k]) {
+
+                next[++j] = ++k;
+
             } else {
-                nextArr[pos++] = 0;
+
+                k = next[k];
+
             }
+
         }
-        return nextArr;
+
+        return next;
+
     }
+
+    public static void main(String[] args) {
+        String test="762761";
+        int[] nums=getNextArray(test.toCharArray());
+        System.out.println(nums.toString());
+    }
+
 }
