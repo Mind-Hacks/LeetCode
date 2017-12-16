@@ -17,6 +17,7 @@ public class StackReverse {
         return A;
     }
 
+    //获取栈低元素
     public static int get(int[] A, int n) {
         int result = A[n-1];
         n--;
