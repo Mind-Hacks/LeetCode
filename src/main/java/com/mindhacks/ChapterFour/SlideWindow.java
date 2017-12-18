@@ -1,5 +1,7 @@
 package com.mindhacks.ChapterFour;
 
+import com.mindhacks.ArrayUtil;
+
 import java.util.*;
 
 /**
@@ -9,23 +11,27 @@ import java.util.*;
  * @wiki:
  */
 public class SlideWindow {
-    public int[] slide(int[] arr, int n, int w) {
-        // write code here
-        int[] res=new int[n-w+1];
-        int index=0;
-        for (int i = 0; i < n-w+1; i++) {
-            res[index++]=getMax(arr,i,i+w-1);
+    public static  int[] slide(int[] arr, int n, int w) {
+        int[] res = new int[n - w + 1];
+        for (int m = 0; m < res.length; m++) {
+            res[m] = getMax(arr, m, m + w);
         }
         return res;
     }
 
-    public int getMax(int[] arr,int start,int end){
-        int max=arr[start];
-        for(int i=start;i<=end;i++){
-            if(arr[i]>max){
-                max=arr[i];
+    public static int getMax(int[] arr, int start, int end) {
+        int max = arr[start];
+        for (; start < end; start++) {
+            if (arr[start] > max) {
+                max = arr[start];
             }
         }
-        return max;
+       return  max;
+    }
+
+    public static void main(String[] args) {
+        int[] test=new int[]{4,3,2,1,5,10};
+        int[] slideArray=slide(test,6,3);
+        ArrayUtil.printAyyay(slideArray,slideArray.length);
     }
 }
