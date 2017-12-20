@@ -21,6 +21,20 @@ class ListNode {
 
 public class InsertValue {
     public ListNode insert(int[] A, int[] nxt, int val) {
+        if(A.length == 0){
+            ListNode curNode = new ListNode(val);
+            //curNode.next= curNode;
+            return curNode;
+        }
+        //构造环形链表
+        int len = A.length;
+        ListNode head= new ListNode(A[0]);
+        ListNode tail = head;
+        for(int i=0;i<len-1;i++){
+            ListNode curNode = new ListNode(A[nxt[i]]);
+            tail.next = curNode;
+            tail = curNode;
+        }
         return null;
     }
 }
