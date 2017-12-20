@@ -21,9 +21,10 @@ class ListNode {
 
 public class InsertValue {
     public ListNode insert(int[] A, int[] nxt, int val) {
+        // write code here
         if(A.length == 0){
             ListNode curNode = new ListNode(val);
-            //curNode.next= curNode;
+            curNode.next= curNode;
             return curNode;
         }
         //构造环形链表
@@ -35,6 +36,27 @@ public class InsertValue {
             tail.next = curNode;
             tail = curNode;
         }
-        return null;
+        tail.next = head;
+
+
+        //插入值
+        ListNode preNode = head;
+        ListNode nextNode = preNode.next;
+        if(head.val>=val){
+            ListNode curNode = new ListNode(val);
+            curNode.next = head;
+            tail.next = curNode;
+            return curNode;
+        }
+        while(nextNode!=null&&val>nextNode.val){
+            preNode = nextNode;
+            nextNode = preNode.next;
+        }
+
+        ListNode curNode = new ListNode(val);
+        curNode.next = nextNode;
+        preNode.next = curNode;
+        return head;
+
     }
 }
