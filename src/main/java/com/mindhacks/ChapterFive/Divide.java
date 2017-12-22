@@ -10,23 +10,54 @@ package com.mindhacks.ChapterFive;
 
 
 public class Divide {
-    public ListNode listDivide(ListNode head, int val) {
+    public static ListNode listDivide(ListNode head, int val) {
         if (head == null) {
             return null;
         }
         ListNode current = head;
         ListNode leftTail = head;
-        ListNode right = head;
+        ListNode right = null;
         ListNode rightTail = head;
+        int ponit = 0;
         while (current != null) {
             if (current.val < val) {
                 leftTail.next = current;
+                leftTail = current;
             } else {
-                rightTail.next = current;
+                if (ponit == 0) {
+                    right = current;
+                    rightTail = current;
+                    ponit++;
+                } else {
+                    rightTail.next = current;
+                    rightTail = current;
+                }
             }
             current = current.next;
         }
         leftTail.next = right;
         return head;
+    }
+
+
+    public static void main(String[] args) {
+        ListNode listNode1 = new ListNode(7);
+        ListNode listNode2 = new ListNode(6);
+        ListNode listNode3 = new ListNode(5);
+        ListNode listNode4 = new ListNode(5);
+        ListNode listNode5 = new ListNode(4);
+        ListNode listNode6 = new ListNode(3);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode5;
+        listNode5.next = listNode6;
+
+        listDivide(listNode1, 5);
+        ListNode current = listNode1;
+        while (current != null) {
+            System.out.print(current.val);
+            current = current.next;
+        }
     }
 }
