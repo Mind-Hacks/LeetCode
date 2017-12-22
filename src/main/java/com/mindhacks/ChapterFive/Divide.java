@@ -15,19 +15,27 @@ public class Divide {
             return null;
         }
         ListNode current = head;
-        ListNode leftTail = head;
+        ListNode left = null;
+        ListNode leftTail = null;
         ListNode right = null;
-        ListNode rightTail = head;
-        int ponit = 0;
+        ListNode rightTail = null;
+        int leftPoint = 0;
+        int rightPoint = 0;
         while (current != null) {
             if (current.val < val) {
-                leftTail.next = current;
-                leftTail = current;
+                if (leftPoint == 0) {
+                    left = current;
+                    leftTail = current;
+                    leftPoint++;
+                } else {
+                    leftTail.next = current;
+                    leftTail = current;
+                }
             } else {
-                if (ponit == 0) {
+                if (rightPoint == 0) {
                     right = current;
                     rightTail = current;
-                    ponit++;
+                    rightPoint++;
                 } else {
                     rightTail.next = current;
                     rightTail = current;
@@ -35,29 +43,13 @@ public class Divide {
             }
             current = current.next;
         }
-        leftTail.next = right;
-        return head;
-    }
-
-
-    public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(7);
-        ListNode listNode2 = new ListNode(6);
-        ListNode listNode3 = new ListNode(5);
-        ListNode listNode4 = new ListNode(5);
-        ListNode listNode5 = new ListNode(4);
-        ListNode listNode6 = new ListNode(3);
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode5;
-        listNode5.next = listNode6;
-
-        listDivide(listNode1, 5);
-        ListNode current = listNode1;
-        while (current != null) {
-            System.out.print(current.val);
-            current = current.next;
+        if (left == null) {
+            return right;
         }
+        rightTail.next = null;
+        leftTail.next = right;
+        return left;
     }
+
+
 }
