@@ -20,4 +20,6 @@ public class ArrayUtil {
         }
         System.out.println(A[length - 1] + "]");
     }
+
+
 }

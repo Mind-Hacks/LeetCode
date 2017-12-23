@@ -1,6 +1,7 @@
 package com.mindhacks.ChapterFive;
 
-import java.util.*;
+
+import com.mindhacks.ListNode;
 
 /**
  * 有一个整数val，如何在节点值有序的环形链表中插入一个节点值为val的节点，并且保证这个环形单链表依然有序。
@@ -10,14 +11,6 @@ import java.util.*;
  * 返回：{1,2,3,4,5,7}
  */
 
-class ListNode {
-    int val;
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}
 
 public class InsertValue {
     public ListNode insert(int[] A, int[] nxt, int val) {
