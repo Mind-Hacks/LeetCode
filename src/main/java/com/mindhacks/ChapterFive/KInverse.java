@@ -54,6 +54,7 @@ public class KInverse {
                 }
             }
 
+
             current.next = statusNode;
             current = current.next;
         }
