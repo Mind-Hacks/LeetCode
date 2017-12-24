@@ -13,31 +13,32 @@ import java.util.Stack;
 public class KInverse {
     public static ListNode inverse(ListNode head, int k) {
         ListNode current = head;
-        ListNode statusNode = head;
         ListNode inverseHead = null;
+        ListNode tail = null;
 
         Stack<ListNode> stack = new Stack<ListNode>();
         int pointHead = 0;
         int size = 0;
         while (current != null) {
-            //进行k个节点之间的连接
-            for (int point = 0; point <k; point++) {
-                if (statusNode != null) {
-                    statusNode = statusNode.next;
-                }
-            }
-
             //入栈
             while (size < k) {
                 if (current == null) {
-                    while (size != 0) {
-                        stack.pop();
-                        size--;
-                    }
+                   break;
                 }
                 size++;
                 stack.push(current);
                 current = current.next;
+            }
+
+            if (size != k) {
+                while (size != 0) {
+                    ListNode popItem = stack.pop();
+                    size--;
+                    if (size == 0) {
+                        tail.next = popItem;
+                    }
+                }
+                break;
             }
 
             //出栈
@@ -47,32 +48,27 @@ public class KInverse {
                 if (pointHead == 0) {
                     pointHead++;
                     inverseHead = popItem;
-                    current = popItem;
+                    tail = popItem;
                 } else {
-                    current.next = popItem;
-                    current = popItem;
+                    tail.next = popItem;
+                    tail = popItem;
                 }
+                tail.next=null;
             }
 
-
-            current.next = statusNode;
-            current = current.next;
         }
         return inverseHead;
     }
 
+    //0,4,9,11,12,14,20,24
     public static void main(String[] args) {
-        ListNode headA = new ListNode(1);
-        headA.append(new ListNode(2))
-                .append(new ListNode(3))
-                .append(new ListNode(4))
+        ListNode headA = new ListNode(0);
+        headA.append(new ListNode(1))
+                .append(new ListNode(2))
                 .append(new ListNode(5))
-                .append(new ListNode(6))
-                .append(new ListNode(7))
-                .append(new ListNode(8))
+                .append(new ListNode(11))
                 .append(null);
-        ListNode returnHead = inverse(headA, 3);
-        int[] array = Common.findCommonParts(returnHead, null);
-        ArrayUtil.printAyyay(array, args.length);
+        ListNode returnHead = inverse(headA, 2);
+        ArrayUtil.printNodeList(returnHead);
     }
 }

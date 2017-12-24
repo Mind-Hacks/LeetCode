@@ -21,5 +21,19 @@ public class ArrayUtil {
         System.out.println(A[length - 1] + "]");
     }
 
-
+    /**
+     * @Description:打印链表节点
+     * @Param:node
+     * @Author:mindHacks
+     * @Date:2017-12-24 23:12:07
+     * @wiki:
+     */
+    public static void printNodeList(ListNode node) {
+        System.out.print("{");
+        while (node!=null){
+            System.out.print(node.val+" ");
+            node=node.next;
+        }
+        System.out.println("}");
+    }
 }
