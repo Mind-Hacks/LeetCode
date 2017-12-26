@@ -37,7 +37,7 @@ public class Palindrome {
             current2 = current2.next;
         }
 
-        phead2 = current1.next;
+         current1.next=phead2;
         //然后连接旧的节点
         return true;
     }
