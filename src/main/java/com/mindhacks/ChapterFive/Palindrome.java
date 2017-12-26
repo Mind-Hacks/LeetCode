@@ -11,7 +11,26 @@ import com.mindhacks.ListNode;
 
 public class Palindrome {
     public boolean isPalindrome(ListNode pHead) {
+        if (pHead==null || pHead.next==null){
+            return  true;
+        }
+        //先找到中间节点
+        ListNode n1=pHead;
+        ListNode n2=pHead;
+        while (n1!=null && n2!=null){
+            n1=n1.next;
+            n2=n2.next;
+        }
+        //然后拆分成两个链表
+        ListNode phead2=null;
+        phead2= n1.next;
+        n1.next=null;
 
+
+        //然后对比链表的各个节点
+
+
+        //然后连接旧的节点
         return true;
     }
 }
