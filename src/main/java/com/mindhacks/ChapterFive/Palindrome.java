@@ -10,20 +10,20 @@ package com.mindhacks.ChapterFive;
 import com.mindhacks.ListNode;
 
 public class Palindrome {
-    public boolean isPalindrome(ListNode pHead) {
+    public static  boolean isPalindrome(ListNode pHead) {
         if (pHead == null || pHead.next == null) {
             return true;
         }
         //先找到中间节点
         ListNode n1 = pHead;
         ListNode n2 = pHead;
-        while (n1 != null && n2 != null) {
+        while (n1 != null && n2 != null &&  n2.next != null) {
             n1 = n1.next;
-            n2 = n2.next;
+            n2 = n2.next.next;
         }
         //然后拆分成两个链表
-        ListNode phead2 = null;
-        phead2 = n1.next;
+        ListNode phead2 = n1.next;
+        ListNode tail2 = n2.next;
         n1.next = null;
 
         ListNode current1 = pHead;
@@ -40,5 +40,15 @@ public class Palindrome {
          current1.next=phead2;
         //然后连接旧的节点
         return true;
+    }
+
+    public static void main(String[] args) {
+        ListNode headA = new ListNode(1);
+        headA.append(new ListNode(2))
+                .append(new ListNode(3))
+                .append(new ListNode(2))
+                .append(new ListNode(1))
+                .append(null);
+        System.out.println(isPalindrome(headA));
     }
 }
