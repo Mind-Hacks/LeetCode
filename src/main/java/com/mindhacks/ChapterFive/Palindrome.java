@@ -9,37 +9,48 @@ package com.mindhacks.ChapterFive;
 
 import com.mindhacks.ListNode;
 
+import java.util.List;
+
 public class Palindrome {
-    public static  boolean isPalindrome(ListNode pHead) {
-        if (pHead == null || pHead.next == null) {
+    public static  boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
             return true;
         }
-        //先找到中间节点
-        ListNode n1 = pHead;
-        ListNode n2 = pHead;
-        while (n1 != null && n2 != null &&  n2.next != null) {
-            n1 = n1.next;
-            n2 = n2.next.next;
+        ListNode n1 = head;
+        ListNode n2 = head;
+        while (n2.next != null && n2.next.next != null) { // find mid node
+            n1 = n1.next; // n1 -> mid
+            n2 = n2.next.next; // n2 -> end
         }
-        //然后拆分成两个链表
-        ListNode phead2 = n1.next;
-        ListNode tail2 = n2.next;
-        n1.next = null;
-
-        ListNode current1 = pHead;
-        ListNode current2 = phead2;
-        //然后对比链表的各个节点
-        while (current1 != null && current2 != null) {
-            if (current1.val != current2.val) {
-                return false;
+        n2 = n1.next;               // n2 -> right part first node 右边的值得第一个
+        n1.next = null;             // mid.next -> null
+        ListNode n3 = null;
+        while (n2 != null) { // right part convert
+            n3 = n2.next; // n3 -> save next node
+            n2.next = n1; // next of right node convert
+            n1 = n2; // n1 move
+            n2 = n3; // n2 move
+        }
+        n3 = n1; // n3 -> save last node
+        n2 = head;// n2 -> left first node
+        boolean res = true;
+        while (n1 != null && n2 != null) { // check palindrome
+            if (n1.val != n2.val) {
+                res = false;
+                break;
             }
-            current1 = current1.next;
-            current2 = current2.next;
+            n1 = n1.next; // left to mid
+            n2 = n2.next; // right to mid
         }
-
-         current1.next=phead2;
-        //然后连接旧的节点
-        return true;
+        n1 = n3.next;
+        n3.next = null;
+        while (n1 != null) { // recover list
+            n2 = n1.next;
+            n1.next = n3;
+            n3 = n1;
+            n1 = n2;
+        }
+        return res;
     }
 
     public static void main(String[] args) {
