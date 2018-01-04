@@ -10,7 +10,22 @@ public class MinValue {
 
         int left=0;
         int right=n-1;
-        while (left<=right){
+        int mid=0;
+        while (left<right){
+            if (left==right-1){
+                break;
+            }
+            if (arr[left]<arr[right]){
+                return  arr[left];
+            }
+            mid=(left+right)/2;
+            if (arr[left]>arr[mid]){
+                right=mid;
+                continue;
+            }
+            if (arr[mid]>arr[right]){
+
+            }
             int middle=left+(right-left)/2;
             if (left<=middle){
                 right=middle-1;
