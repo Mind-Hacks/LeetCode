@@ -7,6 +7,7 @@ public class MinValue {
         if (arr==null || n==0){
             return  -1;
         }
+
         int left=0;
         int right=n-1;
         while (left<=right){
