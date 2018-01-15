@@ -16,6 +16,7 @@ public class CountNodes {
         return bs(head, 1, mostLeftLevel(head, 1));
     }
 
+
     public int bs(TreeNode node, int l, int h) {
         if (l == h) {
             return 1;
