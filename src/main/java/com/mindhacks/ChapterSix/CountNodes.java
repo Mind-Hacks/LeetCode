@@ -55,7 +55,6 @@ public class CountNodes {
 
         treeNode2.left=treeNode4;
         treeNode2.right=treeNode5;
-
         System.out.println(count(root));
     }
 }
