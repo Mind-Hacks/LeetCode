@@ -1,6 +1,7 @@
 package patterns.Chain.model;
 
-import design.patterns.Chain.LeaveRequest;
+
+import patterns.Chain.LeaveRequest;
 
 //总经理
 public class GeneralManager extends Leader {

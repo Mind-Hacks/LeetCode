@@ -1,5 +1,5 @@
 package patterns.Interpreter;
-
+//表达式抽象类
 public abstract class Expression {
     /**
      * 以环境为准，本方法解释给定的任何一个表达式
@@ -12,7 +12,7 @@ public abstract class Expression {
     /**
      * 返回表达式的hash code
      */
-    public abstract int hashCode();
+    //public abstract int hashCode();
     /**
      * 将表达式转换成字符串
      */

@@ -2,7 +2,7 @@ package patterns.Interpreter;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//环境变量
 public class Context {
 
     private Map<Variable,Boolean> map = new HashMap<Variable,Boolean>();

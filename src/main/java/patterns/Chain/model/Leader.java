@@ -1,6 +1,7 @@
 package patterns.Chain.model;
 
-import design.patterns.Chain.LeaveRequest;
+
+import patterns.Chain.LeaveRequest;
 
 //领导抽象类
 public abstract class Leader {

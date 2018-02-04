@@ -1,5 +1,5 @@
 package patterns.Interpreter;
-
+//变量
 public class Variable extends Expression {
 
     private String name;
@@ -18,10 +18,6 @@ public class Variable extends Expression {
         return false;
     }
 
-    @Override
-    public int hashCode() {
-        return this.toString().hashCode();
-    }
 
     @Override
     public String toString() {

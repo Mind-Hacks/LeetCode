@@ -1,9 +1,10 @@
 package patterns.Chain;
 
-import design.patterns.Chain.model.Director;
-import design.patterns.Chain.model.GeneralManager;
-import design.patterns.Chain.model.Leader;
-import design.patterns.Chain.model.Manager;
+
+import patterns.Chain.model.Director;
+import patterns.Chain.model.GeneralManager;
+import patterns.Chain.model.Leader;
+import patterns.Chain.model.Manager;
 
 public class Client {
 

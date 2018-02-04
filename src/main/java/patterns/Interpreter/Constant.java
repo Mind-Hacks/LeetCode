@@ -1,5 +1,5 @@
 package patterns.Interpreter;
-
+//常量
 public class Constant extends Expression{
     
     private boolean value;
@@ -17,10 +17,6 @@ public class Constant extends Expression{
         return false;
     }
 
-    @Override
-    public int hashCode() {
-        return this.toString().hashCode();
-    }
 
     @Override
     public boolean interpret(Context ctx) {
