@@ -36,4 +36,21 @@ public class ArrayUtil {
         }
         System.out.println("}");
     }
+
+    /**
+     * @Description:遍历二位数组
+     * @Param:array
+     * @Author:MindHacks
+     * @Date:2018-03-01 16:00:09
+     * @wiki:
+     */
+    public static void printDimensionArray(int[][] array) {
+        for (int n = 0; n < array.length; n++) {
+            System.out.print("{");
+            for (int m = 0; m < array[n].length; m++) {
+                System.out.print(array[n][m] + " ");
+            }
+            System.out.println("}");
+        }
+    }
 }

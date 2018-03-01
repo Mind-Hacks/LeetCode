@@ -1,5 +1,6 @@
 package com.mindhacks.ChapterSeven;
 
+import com.mindhacks.ArrayUtil;
 import com.mindhacks.Three.SameTree.TreeNode;
 
 import java.util.ArrayList;
@@ -23,17 +24,21 @@ public class TreeToSequence {
         if (root == null) {
             return null;
         }
-        int[][] result = new int[3][];
-        List<Integer> res = new ArrayList<Integer>();
+        int[][] result = new int[3][];                  //返回结果
+        List<Integer> res = new ArrayList<Integer>();   //用于遍历的数组
+
         preOrder(root, res);
         result[0] = copyArrayListToArray(res);
         res.clear();
+
         inOrder(root, res);
         result[1] = copyArrayListToArray(res);
         res.clear();
+
         postOrder(root, res);
         result[2] = copyArrayListToArray(res);
         res.clear();
+
         return result;
     }
 
@@ -80,6 +85,7 @@ public class TreeToSequence {
         treeNode2.left = treeNode4;
         treeNode2.right = treeNode5;
 
-        convert(root);
+        int[][] result=convert(root);
+        ArrayUtil.printDimensionArray(result);
     }
 }
