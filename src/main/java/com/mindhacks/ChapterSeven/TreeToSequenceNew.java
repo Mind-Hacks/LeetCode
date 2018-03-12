@@ -28,7 +28,7 @@ public class TreeToSequenceNew {
     public static int[][] convert(TreeNode root) {
         // write code here
         List<Integer> pre = new ArrayList<Integer>();
-        List<Integer> in = new ArrayList<Integer>();
+        List<Integer> in = new ArrayList<Integer>();        //中序遍历
         List<Integer> post = new ArrayList<Integer>();
         preOrder(root, pre);
         inOrder(root, in);
@@ -42,7 +42,7 @@ public class TreeToSequenceNew {
         return res;
     }
 
-    public static void preOrder(TreeNode root, List<Integer> list) {
+    public static void preOrder(TreeNode root, List<Integer> list) {    //先序遍历
         if (root == null)
             return;
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -57,7 +57,7 @@ public class TreeToSequenceNew {
         }
     }
 
-    public static void inOrder(TreeNode root, List<Integer> list) {
+    public static void inOrder(TreeNode root, List<Integer> list) {     //中序遍历
         if (root == null)
             return;
 
