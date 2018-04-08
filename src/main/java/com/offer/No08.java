@@ -27,6 +27,7 @@ public class No08 {
             return array[left];    //没有旋转、
         }
         while (left < right) {
+
             int mid = (left + right) / 2;
             if (array[mid] == array[left] && array[left] == array[right]) {
                 return seachMin(array, left, right);
