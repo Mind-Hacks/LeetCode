@@ -21,7 +21,7 @@ public class KuiSuSort {
 
     public static int partition(int[] array, int left, int right) {
         int temp = left - 1;
-        while (left <= right) {
+        while (left <= right) {                     //有等号的目的是将 末尾元素，放到分界线处
             if (array[left] <= array[right]) {
                 swap(array, left, ++temp);
             }
