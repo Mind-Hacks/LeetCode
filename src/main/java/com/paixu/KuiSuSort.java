@@ -5,6 +5,7 @@ package com.paixu;
  * @Author:MindHacks
  * @Date:2018-04-13 00:15:21
  * @wiki:
+ * 通过排序将记录分割成独立的两部分，一部分比另外一部分小，然后对两部分继续排序，直到有序
  */
 public class KuiSuSort {
 

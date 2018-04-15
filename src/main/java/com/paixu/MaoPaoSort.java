@@ -5,6 +5,8 @@ package com.paixu;
  * @Author:MindHacks
  * @Date:2018-04-13 00:09:35
  * @wiki:
+ * 一种交换顺序，基本思想是：两两比较相邻记录的关键字，如果反则交换，
+ * 直到没有反序的记录为止
  */
 public class MaoPaoSort {
 
