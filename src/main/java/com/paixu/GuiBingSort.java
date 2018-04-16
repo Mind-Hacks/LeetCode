@@ -5,6 +5,8 @@ package com.paixu;
  * @Author:MindHacks
  * @Date:2018-04-16 12:23:45
  * @wiki:
+ * （1）利用递归将数组拆分成若干份
+ * （2）然后比较若干份大小，然后就行合并
  */
 public class GuiBingSort {
     public int[] mergeSort(int[] A, int n) {
