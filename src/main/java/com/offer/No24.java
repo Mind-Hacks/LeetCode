@@ -24,11 +24,11 @@ public class No24 {
         while (temp > left && array[temp - 1] > array[right]) {
             temp--;
         }
-        for (int j = temp - 1; j > left; j--) {
+        for (int j = temp - 1; j >=left; j--) {
             if (array[j] > array[right]) {
                 return false;
             }
         }
-        return process(array, left, temp - 1) && process(array, temp, right);
+        return process(array, left, temp - 1) && process(array, temp, right-1);
     }
 }
