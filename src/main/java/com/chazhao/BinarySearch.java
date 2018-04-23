@@ -16,7 +16,7 @@ public class BinarySearch {
 
         if (start <= end) {
             // 中间位置
-            int middle = (start + end) / 1;
+            int middle = (start + end) / 2;
             // 中值
             int middleValue = array[middle];
 

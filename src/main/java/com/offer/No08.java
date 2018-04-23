@@ -1,14 +1,6 @@
 package com.offer;
 
 
-import java.util.Stack;
-
-/**
- * @Description: 旋转数组的最小值
- * @Author:MindHacks
- * @Date:2018-04-05 17:40:54
- * @wiki:
- */
 public class No08 {
 
 
@@ -23,27 +15,23 @@ public class No08 {
         }
         int left = 0;
         int right = array.length - 1;
-        if (array[right] > array[left]) {
-            return array[left];    //没有旋转、
-        }
-        while (left < right) {
-
-            int mid = (left + right) / 2;
-            if (array[mid] == array[left] && array[left] == array[right]) {
-                return seachMin(array, left, right);
-            }
-            if (right-left==1){
+        int mid = 0;
+        while (array[left] >= array[right]) {
+            if ((right - left) == 1) {
+                mid = right;
                 break;
             }
-            if (array[mid] >=array[left]) {
-                left = mid + 1;
-            } else if (array[mid] < array[right]) {
-                right = mid - 1;
+            mid = (right + left) / 2;
+            if (array[left] == array[mid] && array[mid] == array[right]) {
+                return seachMin(array, left, right);
+            }
+            if (array[left] <= array[mid]) {
+                left = mid;
             } else {
                 right = mid;
             }
         }
-        return -1;
+        return array[mid];
     }
 
     private static int seachMin(int[] arr, int left, int right) {
