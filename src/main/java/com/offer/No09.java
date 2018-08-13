@@ -7,7 +7,7 @@ package com.offer;
  * @Date:2018-04-05 18:41:30
  * @wiki:
  */
-public class No9 {
+public class No09 {
 
 
     public static void main(String[] args) {

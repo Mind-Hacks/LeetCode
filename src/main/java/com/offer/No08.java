@@ -1,6 +1,10 @@
 package com.offer;
 
-
+/**
+ * @Description: 旋转数组
+ * @Author:MindHacks
+ * @wiki:
+ */
 public class No08 {
 
 

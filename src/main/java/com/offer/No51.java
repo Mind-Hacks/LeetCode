@@ -1,5 +1,7 @@
 package com.offer;
 
+import java.util.HashMap;
+
 /**
  * @Description: 数组中重复数字问题
  * @Author:MindHacks
@@ -12,6 +14,9 @@ public class No51 {
         int[] test=new int[numbers1.length];
         duplicate(numbers1,5,test);
         System.out.println(test[0]);
+
+        HashMap hashMap=new HashMap();
+        hashMap.put("11","11");
 
       /*  int[] numbers2 = {2, 4, 3, 1, 4};
         System.out.println(duplicate(numbers2));
