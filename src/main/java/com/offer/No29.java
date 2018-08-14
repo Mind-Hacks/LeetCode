@@ -1,17 +1,17 @@
 package com.offer;
 
+import java.util.ArrayList;
+
 /**
- * @Description: 数组中出现次数超过一半的数字
+ * @Description: 输入一个字符串, 按字典序打印出该字符串中字符的所有排列。
+ * 例如输入字符串abc,则打印出由字符a,b,c所，能排列出来的所有字符串abc,acb,bac,bca,cab和cba
  * @Author:MindHacks
- * @Date:2018-04-25 17:38:32
- * @wiki: 数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
- * 例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。
- * 由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
+ * @Date:2018-04-23 10:05:36
+ * @wiki:
  */
 public class No29 {
 
-    public int MoreThanHalfNum_Solution(int[] array) {
-        
-        return -1;
+    public static  int moreThanHalfnum(int[] nums,int length){
+        return 0;
     }
 }
