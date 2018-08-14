@@ -11,7 +11,18 @@ import java.util.ArrayList;
  */
 public class No29 {
 
-    public static  int moreThanHalfnum(int[] nums,int length){
-        return 0;
+    public static int moreThanHalfnum(int[] nums, int length) {
+        int result = nums[0];
+        int time = 1;
+        for (int i = 0; i < length; i++) {
+            if (0 == time) {
+                result = nums[i];
+            } else if (nums[i] == result) {
+                time++;
+            } else {
+                time--;
+            }
+        }
+        return result;
     }
 }
