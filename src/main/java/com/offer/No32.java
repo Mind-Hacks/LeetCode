@@ -8,16 +8,20 @@ package com.offer;
  */
 public class No32 {
     //base method
-    int NumTotal1(int n){
-        if (n<=0){
+    static int NumTotal1(int n) {
+        if (n <= 0) {
             return 0;
         }
-        int total=0;
-        while (n/10!=0){
-            if (n%10==1){
+        int total = 0;
+        for (int m = 1; m <= n; m++) {
+            if (m % 10 == 1) {
                 total++;
             }
         }
-        return  total;
+        return total;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(NumTotal1(21));
     }
 }
